@@ -1,0 +1,19 @@
+body {
+    background: rgb(51, 51, 51);
+}
+
+.mesa {
+    width: 600px;
+    height: 400px;
+    background: #4C97FF;
+    margin: 25vh auto;
+}
+
+.mesa > .bolinha {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background-color: white;
+    border-radius: 50%;
+    
+}
