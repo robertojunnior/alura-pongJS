@@ -108,9 +108,19 @@ function verificarColisaoRaquete(x, y){
 }
 
 function mostrarPlacar(){
-  text(meusPontos, 275, 26);
-  text(pontosOponente, 325, 26);
+  stroke(255)
+  textAlign(CENTER)
+  textSize(16)
+  fill(color(255, 140, 0))
+  rect(180, 10, 40, 20)
   fill(255)
+  text(meusPontos, 200, 26);
+  fill(color(255, 140, 0))
+  rect(380, 10, 40, 20)
+  fill(255)
+  text(pontosOponente, 400, 26);
+  
+  
 }
 
 function marcarPonto(){
