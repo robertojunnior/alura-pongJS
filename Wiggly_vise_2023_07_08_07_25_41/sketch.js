@@ -5,8 +5,8 @@ let diametro = 20
 let raio = diametro / 2
 
 //velocidade da bolinha
-let velocidadeBolinhaX = 6
-let velocidadeBolinhaY = 6
+let velocidadeBolinhaX = 7
+let velocidadeBolinhaY = 7
 
 // variáveis da raquete
 let xRaquete = 5
@@ -24,9 +24,22 @@ let velocidadeYOponente;
 let meusPontos = 0
 let pontosOponente = 0
 
+// sons do jogo
+let somRaquete
+let somPonto
+let somTrilha
+
 //cria a janela de preview
 function setup() {
   createCanvas(600, 400);
+  somTrilha.loop();
+}
+
+//musica jogo
+function preload(){
+  somTrilha = loadSound("trilha.mp3")
+  somRaquete = loadSound("raquetada.mp3")
+  somPonto = loadSound("ponto.mp3")
 }
 
 //funcao principal, cria a cor do bg e abriga as outras funções abaixo
@@ -96,7 +109,8 @@ function movimentarRaqueteOponente() {
 function verificarColisaoRaquete() {
   if (xBolinha - raio < xRaquete + comprimentoRaquete && 
       yBolinha - raio < yRaquete + alturaRaquete && yBolinha + raio > yRaquete - alturaRaquete){
-    velocidadeBolinhaX *= -1;
+      velocidadeBolinhaX *= -1;
+      somRaquete.play()
   }
 }
 
@@ -104,6 +118,7 @@ function verificarColisaoRaquete(x, y){
   colidiu = collideRectCircle(x, y, comprimentoRaquete, alturaRaquete, xBolinha, yBolinha, raio);
     if (colidiu){
       velocidadeBolinhaX *= -1;
+      somRaquete.play();
     }
 }
 
@@ -126,8 +141,10 @@ function mostrarPlacar(){
 function marcarPonto(){
   if (xBolinha > 590){
     meusPontos += 1
+    somPonto.play()
   } if (xBolinha < 10){
     pontosOponente += 1
+    somPonto.play()
   }
 }
 
