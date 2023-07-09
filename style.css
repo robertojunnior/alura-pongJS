@@ -1,7 +1,29 @@
-html, body {
+/* html, body {
   margin: 0;
   padding: 0;
 }
 canvas {
   display: block;
+} */
+
+
+body {
+  background: rgb(51, 51, 51);
+}
+
+.mesa {
+  width: 600px;
+  height: 400px;
+  background: #4c97ff;
+  margin: 25vh auto;
+  border: 2px solid #fff; 
+}
+
+.mesa > .bolinha {
+  /* position: absolute; */
+  width: 20px;
+  height: 20px;
+  background-color: white;
+  border-radius: 50%;
+    
 }
