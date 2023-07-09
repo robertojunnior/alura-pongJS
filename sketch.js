@@ -87,23 +87,38 @@ function mostraRaquete(x ,y) {
 }
 
 function movimentarRaquete() {
-  if (keyIsDown(UP_ARROW)) {
+  if (keyIsDown(87)) {
     yRaquete -= 10;
   }
-   if (keyIsDown(DOWN_ARROW)) {
+   if (keyIsDown(83)) {
     yRaquete += 10;
   }
-  if (keyIsDown(LEFT_ARROW)) {
+  if (keyIsDown(65)) {
     xRaquete -= 10;
   }
-   if (keyIsDown(RIGHT_ARROW)) {
+   if (keyIsDown(68)) {
     xRaquete += 10;
   }
 }
 
 function movimentarRaqueteOponente() {
-  velocidadeYOponente = yBolinha - yRaqueteOponente - comprimentoRaquete / 2 - 50
-  yRaqueteOponente += velocidadeYOponente;
+  // 1 jogador
+  // velocidadeYOponente = yBolinha - yRaqueteOponente - comprimentoRaquete / 2 - 50
+  // yRaqueteOponente += velocidadeYOponente;
+  
+  // 2 jogadores
+   if (keyIsDown(UP_ARROW)) {
+    yRaqueteOponente -= 10;
+  }
+   if (keyIsDown(DOWN_ARROW)) {
+    yRaqueteOponente += 10;
+  }
+  if (keyIsDown(LEFT_ARROW)) {
+    xRaqueteOponente -= 10;
+  }
+   if (keyIsDown(RIGHT_ARROW)) {
+    xRaqueteOponente += 10;
+  }
 }
 
 function verificarColisaoRaquete() {
@@ -147,21 +162,3 @@ function marcarPonto(){
     somPonto.play()
   }
 }
-
-
-//     let esquerdaBolinha = xBolinha - raio;
-//     let superiorBolinha = yBolinha - raio;
-//     let inferiorBolinha = yBolinha + raio;
-    
-//     let direitaRaquete = xRaquete + raqueteComprimento;
-//     let superiorRaquete = yRaquete;
-//     let inferiorRaquete = yRaquete + raqueteAltura;	
-
-// function verificaColisaoRaquete() {	
-//     if (esquerdaBolinha < direitaRaquete  // bolinha alcançou a raquete
-//         && superiorBolinha < inferiorRaquete  // bolinha não está abaixo da raquete
-//         && inferiorBolinha > superiorRaquete) {  // bolinha não está acima da raquete
-//         velocidadeXBolinha *= -1;
-//     }
-// }
-
